@@ -108,3 +108,4 @@ cypress/integration/1-getting-started/*
 cypress/integration/2-advanced-examples/*
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,windows,cypressio,macos,linux
+node_modules
