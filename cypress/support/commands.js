@@ -24,20 +24,27 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('search', (value)=>{
-    cy.fixture('index').then((index)=>{
+Cypress.Commands.add('search', (value) => {
+    cy.fixture('selectors/index').then((index) => {
         cy.get(index.searchBox).type(value);
         cy.get(index.searchButton).click();
     })
 })
 
-Cypress.Commands.add('login', (email, password)=>{
-    cy.fixture('login').then((login)=>{
-        cy.get(login.loginLink).click();
-        cy.get(login.email).type(email);
-        cy.get(login.password).type(password);
-        cy.get(login.loginButton).click();
-    })
+Cypress.Commands.add('login', (email, password) => {
+    cy.get('.login').click();
+    cy.get('#email').type(email);
+    cy.get('#passwd').type(password);
+    cy.get('#SubmitLogin > span').click();
 })
+
+Cypress.Commands.add('sendMessage', (subject, email, message) => {
+    cy.get('#contact-link').click();
+    cy.get('#id_contact').select(subject);
+    cy.get('#email').type(email);
+    cy.get('#message').type(message);
+    cy.get('#submitMessage').click();
+  })
+  
 
 
