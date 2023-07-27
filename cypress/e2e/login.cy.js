@@ -8,16 +8,12 @@ describe('Login', () => {
 
     it('Login with incorrect email', function () {
         cy.login(this.credentials.invalidUser, this.credentials.validPassword)
-        cy.fixture('login').then((login)=>{
-            cy.get(login.incorrectLoginBanner).should('contain','Invalid email address');
-        })
+        cy.get('.alert-danger li').should('contain','Invalid email address');
         
     })
 
     it('Login with incorrect password', function () {
         cy.login(this.credentials.validUser, this.credentials.invalidPassword)
-        cy.fixture('login').then((login)=>{
-            cy.get(login.incorrectLoginBanner).should('contain','Authentication failed.');
-        })
+        cy.get('.alert-danger li').should('contain','Authentication failed.');
     })
 })
