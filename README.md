@@ -1,1 +1,1 @@
-# cypress-practice-udemy
+# cypress-practice-ui-store
