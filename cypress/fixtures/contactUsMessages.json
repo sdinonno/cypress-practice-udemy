@@ -1,0 +1,14 @@
+[
+    {
+        "subject": "Customer service",
+        "email": "sofiaditest1@gmail.com",
+        "message": "A new message for support team related to customer service.",
+        "alertMessage": "Your message has been successfully sent to our team."
+    },
+    {
+        "subject": "Webmaster",
+        "email": "sofiaditest@gmail.com",
+        "message": "A new message for support team related to webmaster.",
+        "alertMessage": "Your message has been successfully sent to our team."
+    }
+]
